@@ -15,8 +15,8 @@ ai-code-review:
     host: https://api.deepseek.com
     token: # 密钥
   gitlab:
-    token: glpat-_T8J31UmmmmnzK827iSa
-    host: https://gitlab.lbxdrugs.com
+    token: # 密钥
+    host: # gitlab地址
     fileExtensions:
       - .java # 文件后缀
   promptTemplate:
