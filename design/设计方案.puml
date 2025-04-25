@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+node "GitLab" {
+}
+
+node "ai-code-review-server" as "cr" {
+}
+
+cloud "llm" {
+
+}
+GitLab -> cr : event push
+
+cr -> llm
+
+@enduml

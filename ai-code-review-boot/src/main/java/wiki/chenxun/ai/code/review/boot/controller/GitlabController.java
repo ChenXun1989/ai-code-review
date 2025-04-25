@@ -1,5 +1,7 @@
 package wiki.chenxun.ai.code.review.boot.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.*;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import wiki.chenxun.ai.code.review.boot.controller.req.GitlabMergeRequestEvent;
@@ -27,6 +30,8 @@ import java.util.stream.Collectors;
  **/
 @Slf4j
 @RestController
+@RequestMapping("/gitlab")
+@Tag(name = "gitlab处理")
 public class GitlabController {
 
     @Autowired
@@ -39,8 +44,9 @@ public class GitlabController {
     private AiCodeReviewService aiCodeReviewService;
 
 
-    @PostMapping("/gitlab/callback")
+    @PostMapping("/gitlab/merge/event")
     @Validated()
+    @Operation(summary = "gitlab merge request event")
     public void onMergeEvent(@RequestBody GitlabMergeRequestEvent event){
         log.info("gitlab merge request event:{}",event);
 
