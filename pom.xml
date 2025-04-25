@@ -1,17 +1,101 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>chenxun.wiki</groupId>
+    <groupId>wiki.chenxun</groupId>
     <artifactId>ai-code-review</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>ai-code-review</name>
     <url>https://www.chenxun.wiki</url>
+    <modules>
+        <module>ai-code-review-core</module>
+        <module>ai-code-review-llm-deepseek</module>
+        <module>ai-code-review-boot</module>
+        <module>ai-code-review-notice-wechat</module>
+    </modules>
+    <packaging>pom</packaging>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <lombok.version>1.18.34</lombok.version>
     </properties>
+
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>wiki.chenxun</groupId>
+                <artifactId>ai-code-review-boot</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>wiki.chenxun</groupId>
+                <artifactId>ai-code-review-core</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>wiki.chenxun</groupId>
+                <artifactId>ai-code-review-llm-deepseek</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.7.18</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>2.7.18</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>2.7.18</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>2.7.18</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.10.3</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+
+
+
+    </dependencyManagement>
 
 
     <build>
@@ -25,9 +109,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-                    <testIncludes>
-                        <testInclude>none</testInclude>
-                    </testIncludes>
                 </configuration>
             </plugin>
 
