@@ -1,5 +1,5 @@
 server:
-  port: 10080
+  port: 10080 # 端口
 
 spring:
   mvc:
@@ -9,16 +9,16 @@ spring:
 
 ai-code-review:
   weChat:
-    hookUrl: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4195f111-48a7-4ec8-8104-7ab1b90990f7
+    hookUrl: # 微信机器人的hook地址
   llmType: deepseek
   deepseek:
     host: https://api.deepseek.com
-    token: Bearer sk-54d7f9febc3e444cb4a2f3904dff9dac
+    token: # 密钥
   gitlab:
     token: glpat-_T8J31UmmmmnzK827iSa
     host: https://gitlab.lbxdrugs.com
     fileExtensions:
-      - .java
+      - .java # 文件后缀
   promptTemplate:
     header: |-
       你是一位资深的软件开发工程师，专注于代码的规范性、功能性、安全性和稳定性。本次任务是对员工的代码进行审查，具体要求如下：
