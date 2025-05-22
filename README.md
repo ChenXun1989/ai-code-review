@@ -3,7 +3,7 @@ Ai for code review
 
 # 使用手册
 ### 下载代码
-> git clone https://github.com/zhangxiaoyang/ai-code-review.git
+> git clone https://github.com/ChenXun1989/ai-code-review.git
 
 ### 安装依赖
 > mvn install -DSkipTests
