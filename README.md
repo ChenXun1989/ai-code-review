@@ -34,5 +34,3 @@ Ai for code review
 ## 个人博客
 [https://www.chenxun.wiki](https://www.chenxun.wiki)
 
-## 微信
-<img src="avatar.jpg" width="350" height="300" />
